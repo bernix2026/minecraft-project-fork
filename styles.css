@@ -374,7 +374,10 @@ header.scrolled .header-content {
 
 /* Global Styles */
 html, body {
-    height: 100%;
+    /* min-height, not height: a fixed 100% caps the body box at the viewport
+       while the content overflows past it, which leaves the sticky header
+       with nothing to stick to below the fold. */
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background: #0f0f0f;
@@ -421,4 +424,3 @@ footer p {
 .center-text {
     text-align: center;
 }
-</changes>
