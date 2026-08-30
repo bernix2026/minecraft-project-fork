@@ -92,6 +92,22 @@
     margin-top: 30px;
 }
 
+/* Difficulty subheadings after the first: keep them clear of the grid above */
+.tutorials-container + h2 {
+    margin-top: 70px;
+}
+
+/* Section title sitting above the difficulty subheadings, larger so the
+   three levels below it read as nested rather than as peers */
+.section h2.section-title {
+    font-size: 2.6rem;
+    margin-bottom: 24px;
+}
+
+.section h2.section-title i {
+    font-size: 2.8rem;
+}
+
 .tutorial-card {
     background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
     backdrop-filter: blur(10px);
