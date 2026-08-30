@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redstone - Minecraft Hub</title>
+    <link rel="icon" type="image/svg+xml" href="MINECRAFT/logo.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="MINECRAFT/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="center-text">Minecraft Hub</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#stats"><i class="fas fa-chart-line"></i> Stats</a></li>
+                <li><a href="index.html#facts"><i class="fas fa-info-circle"></i> Facts</a></li>
+                <li><a href="index.html#tutorials"><i class="fas fa-book-open"></i> Tutorials</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="margin-bottom: 40px;">
+            <div class="container">
+                <h2><i class="fas fa-bolt"></i> Redstone</h2>
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <h3><i class="fas fa-bolt"></i> Redstone</h3>
+                        <span class="difficulty">Hard</span>
+                    </div>
+                    <p>Redstone is Minecraft's electricity: a signal system built from dust, torches, repeaters and comparators that lets you automate almost anything. This guide covers how signals actually behave, the components that shape them, and the circuits worth learning first.<br><br>Signal Strength<br>Every redstone signal has a strength from 0 to 15. A powered source outputs 15, and redstone dust loses one point for every block it travels, so a line of dust carries a signal exactly 15 blocks before dying. Anything further needs a repeater to restore it to full strength.<br><br>Timing<br>Redstone is measured in redstone ticks. One redstone tick is two game ticks, or 0.1 seconds under normal conditions. Almost every delay you build is a multiple of that figure, so it is the number to keep in mind when timing circuits.<br><br>Power Sources<br>Levers: toggle on and off, and stay where you put them.<br>Buttons: emit a short pulse. Stone buttons last 1 second, wooden buttons 1.5 seconds.<br>Pressure Plates: trigger on entities standing on them. Weighted pressure plates output a strength proportional to the number of items on top.<br>Redstone Torches: always on unless the block they are attached to is powered, which makes them the game's inverter.<br>Daylight Detectors: output a strength based on light level, and can be right-clicked to invert for night-time circuits.<br>Observers: watch the block in front and emit a single short pulse whenever it changes.<br><br>Shaping the Signal<br>Repeaters do three jobs: they restore a signal to strength 15, they add an adjustable delay of 1 to 4 redstone ticks, and they enforce one-way travel. A repeater powered from the side by another repeater or comparator is locked, holding its output until released.<br>Comparators have two modes. In comparison mode the signal passes through only if it is at least as strong as any side input. In subtraction mode, toggled by right-clicking, the side input is subtracted from the back input. Comparators also read containers: place one against a chest, furnace or hopper and it outputs a strength based on how full that container is.<br>Redstone torches invert. Feed them power and they switch off, which is how you build a NOT gate and, from there, everything else.<br><br>Pistons<br>Pistons push up to 12 blocks in a line and refuse to move any more than that. Sticky pistons pull a single block back with them. Obsidian, bedrock, and any block with an inventory such as a chest or furnace cannot be pushed at all. Slime and honey blocks drag adjacent blocks along, which is what makes flying machines and larger contraptions possible.<br><br>Circuits Worth Learning First<br>Clock: a repeating on-off pulse, most simply built as a loop of repeaters feeding back into itself.<br>T Flip-Flop: converts a pulse into a toggle, so a button can switch something on and leave it on until pressed again.<br>Pulse Limiter: shortens a long signal to a fixed brief pulse, useful for triggering something once regardless of how long the input lasts.<br>Logic Gates: AND, OR and NOT gates built from torches and dust are the foundation of every larger build, up to and including working calculators.<br><br>A Java Edition Quirk<br>Quasi-connectivity means a piston in Java Edition can be activated by a power source one block above it, even without a direct connection. Many classic Java contraptions depend on this behaviour. It does not exist in Bedrock Edition, so circuits relying on it will not transfer between the two.<br><br>Practical Tips<br>Build circuits with room to spare; redstone is far easier to debug when you can see the dust.<br>Count your blocks and place repeaters before the signal reaches 15, not after it has already failed.<br>Redstone dust connects diagonally upward but not downward through a solid block, a frequent source of confusion.<br>Test contraptions in a creative world before committing resources to them in survival.</p>
+                    <a href="index.html#tutorials" class="btn" style="background: #6b7280;">Back to Tutorials</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Minecraft Hub. Created for educational purposes.</p>
+            <p>Not affiliated with Mojang AB or Microsoft Corporation.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
