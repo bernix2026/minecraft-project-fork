@@ -585,6 +585,15 @@ footer p {
     overflow: hidden;
 }
 
+/* Entries with no image available: a faint outlined tile, so the row still
+   lines up with imaged rows and the gap reads as deliberate rather than broken.
+   Marked by outline rather than colour alone. */
+.block-thumb:empty {
+    box-sizing: border-box;
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 2px;
+}
+
 .block-thumb .mob-icon {
     position: static;
     width: 100%;
