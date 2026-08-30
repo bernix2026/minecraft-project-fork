@@ -115,6 +115,10 @@
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.08);
+    /* Column layout so the Read More button is pinned to the bottom of every
+       card, keeping buttons aligned when descriptions wrap to different heights */
+    display: flex;
+    flex-direction: column;
 }
 
 .tutorial-card:hover {
@@ -156,6 +160,8 @@
     padding: 20px 25px;
     margin: 0;
     font-size: 0.95rem;
+    /* Absorb the spare height so shorter descriptions do not lift the button */
+    flex: 1;
 }
 
 .btn {
