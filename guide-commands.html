@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands - Minecraft Hub</title>
+    <link rel="icon" type="image/svg+xml" href="MINECRAFT/logo.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="MINECRAFT/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="center-text">Minecraft Hub</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#stats"><i class="fas fa-chart-line"></i> Stats</a></li>
+                <li><a href="index.html#guide"><i class="fas fa-map"></i> Guide</a></li>
+                <li><a href="index.html#facts"><i class="fas fa-info-circle"></i> Facts</a></li>
+                <li><a href="index.html#tutorials"><i class="fas fa-book-open"></i> Tutorials</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="margin-bottom: 40px;">
+            <div class="container">
+                <h2><i class="fas fa-terminal"></i> Commands</h2>
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <h3><i class="fas fa-terminal"></i> Commands</h3>
+                        <span class="difficulty">Guide</span>
+                    </div>
+                    <p>Commands are typed into the chat window and let you change the world directly. They need cheats enabled, which you set when creating a world, or can switch on temporarily in a single-player world by opening it to LAN. On a server you need operator permission.<br><br><strong>Target Selectors</strong><br>Most commands accept a shorthand for who or what they apply to.<br>@p: The nearest player.<br>@a: Every player.<br>@r: A random player.<br>@e: Every entity, mobs and items included.<br>@s: Whoever ran the command, which is usually you.<br>Selectors take filters in square brackets, so @e[type=creeper,distance=..20] means every creeper within twenty blocks.<br><br><strong>Coordinates</strong><br>Absolute coordinates are plain numbers: 100 64 -200.<br>A tilde means relative to your position, so ~ ~5 ~ is five blocks above you.<br>A caret means relative to the direction you are facing, which is how you place something in front of yourself regardless of heading.<br><br><strong>Everyday Commands</strong><br>/gamemode creative, survival, adventure or spectator.<br>/give @s diamond_pickaxe 1 places an item straight into your inventory.<br>/tp moves you to coordinates or to another player.<br>/time set day or night, and /weather clear, rain or thunder.<br>/difficulty peaceful through hard. Peaceful removes every hostile mob currently loaded.<br>/effect give @s minecraft:night_vision 600 grants an effect for a set time.<br>/kill @e[type=item] clears dropped items, which is a quick way to tidy lag.<br>/seed prints the world seed, and /locate finds the nearest structure of a given type.<br>/spawnpoint and /setworldspawn control where players appear.<br><br><strong>Game Rules</strong><br>/gamerule changes how the world behaves, and these are the ones people actually use.<br>keepInventory true: You keep your items when you die.<br>doDaylightCycle false: Freezes the time of day.<br>mobGriefing false: Stops creepers destroying blocks and endermen picking them up.<br>doFireTick false: Fire stops spreading.<br>randomTickSpeed: Controls how fast crops grow. Raising it far above the default of 3 will cripple performance.<br><br><strong>Building Commands</strong><br>/setblock places a single block at given coordinates.<br>/fill fills an entire region, which is how large flat areas get cleared instantly.<br>/clone copies a region from one place to another, useful for duplicating a build.<br>/summon spawns any entity, with optional data to configure it.<br><br><strong>Command Blocks</strong><br>Command blocks cannot be crafted. You obtain one with /give @s command_block, and only in creative mode. They run a stored command when powered, and chained together they are how adventure maps and minigames are built.<br><br><strong>A Word of Warning</strong><br>In Bedrock Edition, enabling cheats disables achievements for that world permanently; Java Edition advancements are unaffected. Commands like /fill across a huge region can also freeze the game while it works. Test on a copy of your world before running anything sweeping.<br><br>Credits: Based on Minecraft command syntax and community best practices.</p>
+                    <a href="index.html#guide" class="btn" style="background: #6b7280;">Back to Guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Minecraft Hub. Created for educational purposes.</p>
+            <p>Not affiliated with Mojang AB or Microsoft Corporation.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

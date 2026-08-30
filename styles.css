@@ -424,3 +424,194 @@ footer p {
 .center-text {
     text-align: center;
 }
+
+/* Mob roster: image beside each entry, with an empty tile when the file is absent */
+.mob-roster {
+    padding: 20px 25px;
+    flex: 1;
+}
+
+.mob-roster p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.mob-group {
+    color: #4ade80;
+    font-size: 1.15rem;
+    margin: 30px 0 8px;
+}
+
+.mob-list {
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.mob-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mob-list li:last-child {
+    border-bottom: none;
+}
+
+.mob-thumb {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+}
+
+.mob-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    display: block;
+}
+
+.mob-icon.missing {
+    display: none;
+}
+
+.mob-text {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.mob-text strong {
+    color: #ffffff;
+}
+
+.mob-credits {
+    margin-top: 30px;
+}
+
+/* Found / Drops line beneath each mob description */
+.mob-meta {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.mob-meta b {
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+}
+
+.mob-list li {
+    align-items: center;
+}
+
+.mob-note {
+    border-left: 3px solid #4ade80;
+    padding-left: 14px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.mob-note b {
+    color: #ffffff;
+}
+
+/* Complete block list: dense, multi-column, scannable */
+.block-list {
+    column-width: 185px;
+    column-gap: 26px;
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+}
+
+.block-list li {
+    break-inside: avoid;
+    padding: 3px 0;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Biome list: tighter columns than the block list, with a lead-in per group */
+.biome-heading {
+    margin: 24px 0 0;
+}
+
+.biome-heading b {
+    color: #4ade80;
+}
+
+.biome-list {
+    column-width: 165px;
+    margin-top: 8px;
+}
+
+/* Block list with thumbnails */
+.block-list {
+    column-width: auto;
+    column-gap: normal;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 4px 18px;
+}
+
+.block-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.block-thumb {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    display: block;
+    overflow: hidden;
+}
+
+.block-thumb .mob-icon {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.block-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Job site block icon inline in the villager list */
+.site-thumb {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: -4px;
+}
+
+.site-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    display: block;
+}
+
+/* Villager portraits are tall renders - give them a little more room */
+.villager-list .mob-thumb {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 62px;
+}

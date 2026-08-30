@@ -1,0 +1,83 @@
+Drop one image per mob into this folder, named exactly as listed below.
+PNG is expected. Square images look best; they are displayed at 40x40 and
+rendered with pixelated scaling, so small sprites stay crisp.
+Any file that is missing simply shows an empty tile - nothing breaks.
+
+MOB                        FILENAME
+-------------------------- ------------------------------
+Allay                      allay.png
+Armadillo                  armadillo.png
+Axolotl                    axolotl.png
+Bat                        bat.png
+Camel                      camel.png
+Cat                        cat.png
+Chicken                    chicken.png
+Cod and Salmon             cod-and-salmon.png
+Tropical Fish              tropical-fish.png
+Pufferfish                 pufferfish.png
+Cow                        cow.png
+Mooshroom                  mooshroom.png
+Pig                        pig.png
+Sheep                      sheep.png
+Rabbit                     rabbit.png
+Horse                      horse.png
+Donkey and Mule            donkey-and-mule.png
+Skeleton Horse             skeleton-horse.png
+Ocelot                     ocelot.png
+Parrot                     parrot.png
+Frog                       frog.png
+Tadpole                    tadpole.png
+Squid                      squid.png
+Glow Squid                 glow-squid.png
+Turtle                     turtle.png
+Sniffer                    sniffer.png
+Strider                    strider.png
+Snow Golem                 snow-golem.png
+Villager                   villager.png
+Wandering Trader           wandering-trader.png
+Wolf                       wolf.png
+Enderman                   enderman.png
+Bee                        bee.png
+Dolphin                    dolphin.png
+Goat                       goat.png
+Llama and Trader Llama     llama-and-trader-llama.png
+Panda                      panda.png
+Polar Bear                 polar-bear.png
+Iron Golem                 iron-golem.png
+Piglin                     piglin.png
+Zombified Piglin           zombified-piglin.png
+Zombie                     zombie.png
+Zombie Villager            zombie-villager.png
+Husk                       husk.png
+Drowned                    drowned.png
+Skeleton                   skeleton.png
+Stray                      stray.png
+Bogged                     bogged.png
+Creeper                    creeper.png
+Spider                     spider.png
+Cave Spider                cave-spider.png
+Witch                      witch.png
+Slime                      slime.png
+Magma Cube                 magma-cube.png
+Silverfish                 silverfish.png
+Endermite                  endermite.png
+Phantom                    phantom.png
+Guardian                   guardian.png
+Elder Guardian             elder-guardian.png
+Pillager                   pillager.png
+Vindicator                 vindicator.png
+Evoker                     evoker.png
+Vex                        vex.png
+Ravager                    ravager.png
+Breeze                     breeze.png
+Creaking                   creaking.png
+Blaze                      blaze.png
+Ghast                      ghast.png
+Wither Skeleton            wither-skeleton.png
+Hoglin                     hoglin.png
+Zoglin                     zoglin.png
+Piglin Brute               piglin-brute.png
+Shulker                    shulker.png
+Warden                     warden.png
+Ender Dragon               ender-dragon.png
+Wither                     wither.png
