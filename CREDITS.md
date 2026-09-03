@@ -16,9 +16,9 @@ The block images on the [Blocks guide](guide-blocks.html) are rendered from
 
 - Project: [Faithful Resource Pack](https://faithfulpack.net/)
 - Repository: [Faithful-Resource-Pack/Faithful-32x-Java](https://github.com/Faithful-Resource-Pack/Faithful-32x-Java)
-- Licence: [Faithful Licence](https://faithfulpack.net/license)
+- License: [Faithful License](https://faithfulpack.net/license)
 
-The Faithful Licence permits use and modification of their work in
+The Faithful License permits use and modification of their work in
 non-Minecraft projects, including software and websites, on the condition that
 clear credit is given in an appropriate and obvious place. This file, together
 with the link in the site footer, is that credit.
@@ -52,7 +52,7 @@ work done by the wiki's contributors, and it deserves acknowledgement.
 
 - **Roboto** and **Press Start 2P**, served by
   [Google Fonts](https://fonts.google.com/), under the
-  [SIL Open Font Licence](https://scripts.sil.org/OFL).
+  [SIL Open Font License](https://scripts.sil.org/OFL).
 
 ## Icons
 

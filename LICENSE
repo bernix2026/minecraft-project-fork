@@ -1,11 +1,11 @@
-Minecraft Hub — Licence
+Minecraft Hub — License
 =======================
 
 Copyright (c) 2026 dustypaint4413 and contributors. All rights reserved.
 
-This replaces the MIT licence previously referenced in README.md. That
+This replaces the MIT license previously referenced in README.md. That
 reference pointed at a LICENSE.md file which never existed in this repository,
-so no licence was ever actually published here.
+so no license was ever actually published here.
 
 
 1. THE SITE'S OWN CONTENT
@@ -40,11 +40,11 @@ nothing in section 1 is a claim over any of it. Specifically:
   Minecraft block and item textures
       Copyright Mojang Studios / Microsoft. Used here to illustrate an
       unofficial fan reference. Mojang's brand and asset guidelines govern
-      their use, not this licence.
+      their use, not this license.
 
   Faithful 32x textures
       Copyright the Faithful Resource Pack team, used under the Faithful
-      Licence, which permits use and modification in non-Minecraft projects
+      License, which permits use and modification in non-Minecraft projects
       provided clear credit is given. See CREDITS.md.
       https://faithfulpack.net/license
 
@@ -55,10 +55,10 @@ nothing in section 1 is a claim over any of it. Specifically:
       contributors did the work of assembling them.
 
   Font Awesome icons
-      Used under the Font Awesome Free licence (CC BY 4.0 for icons).
+      Used under the Font Awesome Free license (CC BY 4.0 for icons).
 
   Google Fonts (Roboto, Press Start 2P)
-      Used under the SIL Open Font Licence.
+      Used under the SIL Open Font License.
 
 
 3. NO AFFILIATION
@@ -76,12 +76,12 @@ implied. The copyright holder is not liable for any claim, damages, or other
 liability arising from its use.
 
 
-5. A NOTE ON WHAT A LICENCE CAN AND CANNOT DO
+5. A NOTE ON WHAT A LICENSE CAN AND CANNOT DO
 ---------------------------------------------
 
-This licence does not, and cannot, make the site technically impossible to
+This license does not, and cannot, make the site technically impossible to
 copy. Any page a browser can display has already been downloaded in full to
-the visitor's machine. What this licence does is establish who owns the
+the visitor's machine. What this license does is establish who owns the
 original work, which is what makes a takedown request or a claim of
 infringement possible. Attribution and provenance are the realistic
 protections; obstruction is not one.
