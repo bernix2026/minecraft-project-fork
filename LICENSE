@@ -1,0 +1,87 @@
+Minecraft Hub — Licence
+=======================
+
+Copyright (c) 2026 dustypaint4413 and contributors. All rights reserved.
+
+This replaces the MIT licence previously referenced in README.md. That
+reference pointed at a LICENSE.md file which never existed in this repository,
+so no licence was ever actually published here.
+
+
+1. THE SITE'S OWN CONTENT
+-------------------------
+
+The original material in this repository — the guide and tutorial text, the
+page structure, the stylesheet, the scripts, and the site design — may not be
+copied, redistributed, republished, or hosted elsewhere without the written
+permission of the copyright holder.
+
+You may:
+
+  - View the site and read its content.
+  - Save pages locally for your own personal, offline reading.
+  - Quote short passages with attribution and a link back to the source.
+  - Fork this repository on GitHub for the purpose of preparing a contribution
+    back to it via pull request.
+
+You may not:
+
+  - Republish this site, in whole or in substantial part, at another address.
+  - Present this content as your own work.
+  - Redistribute it as part of another project or product.
+
+
+2. MATERIAL THIS PROJECT DOES NOT OWN
+-------------------------------------
+
+A large part of this repository is not the copyright holder's to license, and
+nothing in section 1 is a claim over any of it. Specifically:
+
+  Minecraft block and item textures
+      Copyright Mojang Studios / Microsoft. Used here to illustrate an
+      unofficial fan reference. Mojang's brand and asset guidelines govern
+      their use, not this licence.
+
+  Faithful 32x textures
+      Copyright the Faithful Resource Pack team, used under the Faithful
+      Licence, which permits use and modification in non-Minecraft projects
+      provided clear credit is given. See CREDITS.md.
+      https://faithfulpack.net/license
+
+  Information derived from the Minecraft Wiki
+      Factual game information — block lists, light levels, mob behaviour,
+      enchantment rules — is drawn from minecraft.wiki, which publishes under
+      CC BY-NC-SA 3.0. Facts themselves are not copyrightable, but the wiki's
+      contributors did the work of assembling them.
+
+  Font Awesome icons
+      Used under the Font Awesome Free licence (CC BY 4.0 for icons).
+
+  Google Fonts (Roboto, Press Start 2P)
+      Used under the SIL Open Font Licence.
+
+
+3. NO AFFILIATION
+-----------------
+
+This is an unofficial fan project. It is not affiliated with, endorsed by, or
+associated with Mojang Studios, Microsoft, or the Minecraft Wiki.
+
+
+4. NO WARRANTY
+--------------
+
+This project is provided "as is", without warranty of any kind, express or
+implied. The copyright holder is not liable for any claim, damages, or other
+liability arising from its use.
+
+
+5. A NOTE ON WHAT A LICENCE CAN AND CANNOT DO
+---------------------------------------------
+
+This licence does not, and cannot, make the site technically impossible to
+copy. Any page a browser can display has already been downloaded in full to
+the visitor's machine. What this licence does is establish who owns the
+original work, which is what makes a takedown request or a claim of
+infringement possible. Attribution and provenance are the realistic
+protections; obstruction is not one.
