@@ -3,7 +3,7 @@
 A comprehensive Minecraft resource website providing statistics, facts, cool builds, and beginner tutorials for players of all levels.
 
 ![Minecraft Hub](https://img.shields.io/badge/Minecraft-Hub-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-All%20rights%20reserved-lightgrey)
 
 ## 📋 Table of Contents
 
@@ -121,7 +121,13 @@ This is an educational project. If you'd like to contribute:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+All rights reserved. See [LICENSE](LICENSE) for the full terms.
+
+The guide text, page structure, stylesheet and design may not be republished elsewhere without permission. You are welcome to read the site, save pages for personal offline use, quote short passages with attribution, and fork this repository to prepare a pull request.
+
+Note that much of this repository is **not ours to license**: block textures belong to Mojang and the Faithful Resource Pack, and game information comes from the Minecraft Wiki. See [CREDITS.md](CREDITS.md).
+
+This replaces an earlier MIT reference that pointed at a `LICENSE.md` file which never existed in the repository, so no licence was ever actually published.
 
 ## Acknowledgments
 
