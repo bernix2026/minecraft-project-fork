@@ -64,4 +64,4 @@ work done by the wiki's contributors, and it deserves acknowledgement.
 ## The site's own content
 
 The guide and tutorial text, page structure, stylesheet, scripts and design are
-copyright the project's contributors. See [LICENSE](LICENSE) for the terms.
+copyright dustypaint4413 and bernix2026. See [LICENSE](LICENSE) for the terms.
