@@ -127,7 +127,7 @@ The guide text, page structure, stylesheet and design may not be republished els
 
 Note that much of this repository is **not ours to license**: block textures belong to Mojang and the Faithful Resource Pack, and game information comes from the Minecraft Wiki. See [CREDITS.md](CREDITS.md).
 
-This replaces an earlier MIT reference that pointed at a `LICENSE.md` file which never existed in the repository, so no licence was ever actually published.
+This replaces an earlier MIT reference that pointed at a `LICENSE.md` file which never existed in the repository, so no license was ever actually published.
 
 ## Acknowledgments
 
