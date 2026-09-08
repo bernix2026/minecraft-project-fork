@@ -677,7 +677,15 @@ footer p {
 
 /* Marked by text as well as colour, not colour alone. */
 .list-filter-count.is-empty { color: #fca5a5; }
-.list-filter-count.is-empty::after { content: " 4 no matches"; }
+.list-filter-count.is-empty::after { content: " 4 no matches"; }
+
+/* The list items set display:flex, which outranks the browser's default
+   [hidden] { display: none }. Without this the filter marks rows hidden but
+   they carry on rendering at full height. */
+.block-list li[hidden],
+.mob-list li[hidden] {
+    display: none !important;
+}
 
 @media (max-width: 768px) {
     /* Touch targets. The nav buttons were about 30px tall; 44px is the
