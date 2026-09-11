@@ -73,16 +73,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 items[i].hidden = !hit;
                 if (hit) shown++;
             }
-            count.textContent = (q || active)
+            count.textContent = (q || active.length)
                 ? shown + ' of ' + items.length
                 : items.length + ' shown';
-            count.classList.toggle('is-empty', (q || active) && shown === 0);
+            count.classList.toggle('is-empty', (q || active.length) && shown === 0);
         }
 
 
         /* Family chips. Each is a set of substrings matched against the entry
-           name. They narrow alongside the text box rather than replacing it,
-           so "copper" plus the Stairs chip gives copper stairs only. */
+           name. Several can be on at once and they union, so Wood + Stone +
+           Ore shows all three families together. The text box then narrows
+           whatever the chips let through, so the Ore chip plus "deepslate"
+           gives the deepslate ores only. */
         var FAMILIES = [
             ['Wood',     ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'mangrove',
                           'cherry', 'poplar', 'bamboo', 'crimson', 'warped',
@@ -113,15 +115,29 @@ document.addEventListener('DOMContentLoaded', function () {
         chipRow.setAttribute('role', 'group');
         chipRow.setAttribute('aria-label', 'Filter by family');
 
-        var active = null;
+        var active = [];
 
-        FAMILIES.forEach(function (fam) {
-            var name = fam[0], terms = fam[1];
-            var n = 0;
+        /* Membership is fixed once the list is built, so work it out here
+           rather than re-scanning a thousand names on every keystroke. */
+        var members = FAMILIES.map(function (fam) {
+            var terms = fam[1];
+            var hits = [];
             for (var i = 0; i < labels.length; i++) {
+                var inIt = false;
                 for (var t = 0; t < terms.length; t++) {
-                    if (labels[i].indexOf(terms[t]) !== -1) { n++; break; }
+                    if (labels[i].indexOf(terms[t]) !== -1) { inIt = true; break; }
                 }
+                hits.push(inIt);
+            }
+            return hits;
+        });
+
+        FAMILIES.forEach(function (fam, famIndex) {
+            var name = fam[0];
+            var hits = members[famIndex];
+            var n = 0;
+            for (var i = 0; i < hits.length; i++) {
+                if (hits[i]) n++;
             }
             if (!n) return;
 
@@ -131,33 +147,51 @@ document.addEventListener('DOMContentLoaded', function () {
             chip.textContent = name + ' (' + n + ')';
             chip.setAttribute('aria-pressed', 'false');
             chip.addEventListener('click', function () {
-                var turningOff = active === chip;
-                if (active) {
-                    active.classList.remove('is-on');
-                    active.setAttribute('aria-pressed', 'false');
-                }
-                if (turningOff) {
-                    active = null;
-                } else {
-                    active = chip;
+                var at = active.indexOf(famIndex);
+                if (at === -1) {
+                    active.push(famIndex);
                     chip.classList.add('is-on');
                     chip.setAttribute('aria-pressed', 'true');
+                } else {
+                    active.splice(at, 1);
+                    chip.classList.remove('is-on');
+                    chip.setAttribute('aria-pressed', 'false');
                 }
+                syncClear();
                 apply();
             });
-            chip._terms = terms;
             chipRow.appendChild(chip);
         });
 
+        /* With several chips on at once, clearing them one by one is tedious. */
+        var clear = document.createElement('button');
+        clear.type = 'button';
+        clear.className = 'list-chip list-chip-clear';
+        clear.textContent = 'Clear';
+        clear.hidden = true;
+        clear.addEventListener('click', function () {
+            active.length = 0;
+            chipRow.querySelectorAll('.list-chip.is-on').forEach(function (c) {
+                c.classList.remove('is-on');
+                c.setAttribute('aria-pressed', 'false');
+            });
+            syncClear();
+            apply();
+        });
+
+        function syncClear() {
+            clear.hidden = active.length === 0;
+        }
+
         if (chipRow.children.length) {
+            chipRow.appendChild(clear);
             wrap.parentNode.insertBefore(chipRow, wrap.nextSibling);
         }
 
         function inFamily(i) {
-            if (!active) return true;
-            var terms = active._terms;
-            for (var t = 0; t < terms.length; t++) {
-                if (labels[i].indexOf(terms[t]) !== -1) return true;
+            if (!active.length) return true;
+            for (var a = 0; a < active.length; a++) {
+                if (members[active[a]][i]) return true;
             }
             return false;
         }

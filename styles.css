@@ -778,3 +778,17 @@ footer p {
 @media (max-width: 768px) {
     .list-chip { min-height: 44px; font-size: 0.85rem; }
 }
+
+/* The clear-all control sits with the chips but reads as an action, not a
+   family, so it is bordered rather than filled. */
+.list-chip-clear {
+    background: transparent;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.list-chip-clear:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
