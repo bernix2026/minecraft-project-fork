@@ -84,30 +84,71 @@ document.addEventListener('DOMContentLoaded', function () {
            name. Several can be on at once and they union, so Wood + Stone +
            Ore shows all three families together. The text box then narrows
            whatever the chips let through, so the Ore chip plus "deepslate"
-           gives the deepslate ores only. */
+           gives the deepslate ores only.
+
+           Between them the families cover every entry in the list, and an
+           entry may sit in several - Deepslate Redstone Ore is Stone, Ore
+           and Redstone at once. */
         var FAMILIES = [
             ['Wood',     ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'mangrove',
                           'cherry', 'poplar', 'bamboo', 'crimson', 'warped',
                           'plank', 'log', 'wood']],
             ['Stone',    ['stone', 'cobble', 'granite', 'diorite', 'andesite',
-                          'deepslate', 'tuff', 'basalt', 'blackstone', 'calcite']],
+                          'deepslate', 'tuff', 'basalt', 'blackstone', 'calcite',
+                          'prismarine', 'brick', 'quartz', 'purpur', 'cinnabar',
+                          'sulfur', 'obsidian', 'bedrock', 'amethyst', 'dripstone']],
             ['Ore',      ['ore', 'ancient debris', 'raw ']],
             ['Copper',   ['copper']],
-            ['Concrete', ['concrete']],
-            ['Wool',     ['wool', 'carpet']],
+            ['Dyed',     ['wool', 'carpet', 'bed', 'banner', 'candle', 'concrete',
+                          'terracotta', 'shulker box', 'stained glass', 'glazed']],
             ['Glass',    ['glass']],
             ['Redstone', ['redstone', 'piston', 'observer', 'repeater',
                           'comparator', 'hopper', 'dropper', 'dispenser',
-                          'rail', 'lever', 'target', 'crafter']],
+                          'rail', 'lever', 'target', 'crafter', 'tripwire',
+                          'daylight detector', 'sculk sensor', 'tnt',
+                          'slime block', 'honey block', 'button',
+                          'pressure plate', 'note block', 'lightning rod']],
             ['Plants',   ['sapling', 'flower', 'tulip', 'rose', 'grass', 'fern',
                           'leaves', 'vine', 'moss', 'mushroom', 'wart', 'kelp',
                           'seagrass', 'bamboo', 'cactus', 'azalea', 'dripleaf',
                           'petal', 'orchid', 'allium', 'daisy', 'lilac',
                           'cornflower', 'poppy', 'dandelion', 'eyeblossom',
                           'wildflowers', 'pitcher', 'torchflower', 'sunflower',
-                          'peony', 'lily', 'sprouts', 'roots', 'fungus']],
+                          'peony', 'lily', 'sprouts', 'roots', 'fungus', 'bush',
+                          'sugar cane', 'lichen', 'chorus', 'melon', 'pumpkin',
+                          'wheat', 'carrot', 'potato', 'beetroot', 'cocoa',
+                          'berry', 'nylium', 'propagule', 'spore', 'hay',
+                          'dried kelp', 'bluet', '=cobweb']],
+            ['Coral',    ['coral']],
+            ['Terrain',  ['dirt', 'sand', 'gravel', 'clay', 'mud', 'podzol',
+                          'mycelium', 'farmland', 'path', 'snow', 'ice',
+                          '=powder snow', 'netherrack', 'soil', 'soul sand', 'sculk',
+                          'magma', 'steppe', 'froglight', '=water',
+                          'bubble column', '=lava', '=cobweb', 'turtle egg',
+                          'sniffer egg', 'frogspawn', 'sea pickle']],
+            ['Nether',   ['nether', 'crimson', 'warped', 'soul', 'blackstone',
+                          'basalt', 'magma', 'glowstone', 'shroomlight', 'ghast',
+                          'piglin', 'respawn anchor', 'lodestone', 'gilded']],
+            ['End',      ['end ', 'ender', 'purpur', 'chorus', 'dragon',
+                          'shulker']],
+            ['Light',    ['torch', 'lantern', 'glowstone', 'froglight',
+                          'shroomlight', 'end rod', 'campfire', 'lamp',
+                          "jack o'", 'beacon', 'conduit', 'candle', '=fire',
+                          '=soul fire', '=lava', '=light', '=magma block']],
+            ['Utility',  ['chest', 'table', 'furnace', 'smoker', 'barrel',
+                          'anvil', 'loom', 'lectern', 'cauldron', 'composter',
+                          'grindstone', 'stonecutter', 'brewing', 'enchanting',
+                          'bell', 'jukebox', 'bookshelf', 'flower pot',
+                          'decorated pot', 'bee nest', 'beehive', 'ladder',
+                          'scaffolding', 'bars', 'chain', 'door', 'trapdoor',
+                          'sign', 'shelf', 'vault', 'spawner', 'command',
+                          'structure', 'jigsaw', 'barrier', 'frame', 'portal',
+                          'cake', 'skull', 'head', 'sponge', 'block of',
+                          'bone block', 'honeycomb', 'clump', 'resin',
+                          '=lodestone', '=conduit', '=beacon']],
             ['Stairs',   ['stairs']],
-            ['Slabs',    ['slab']]
+            ['Slabs',    ['slab']],
+            ['Walls',    ['wall', 'fence']]
         ];
 
         var chipRow = document.createElement('div');
@@ -125,7 +166,14 @@ document.addEventListener('DOMContentLoaded', function () {
             for (var i = 0; i < labels.length; i++) {
                 var inIt = false;
                 for (var t = 0; t < terms.length; t++) {
-                    if (labels[i].indexOf(terms[t]) !== -1) { inIt = true; break; }
+                    var term = terms[t];
+                    /* A leading "=" means the whole name must match. Without it
+                       "pot" would drag in Potatoes, "bee" Beetroots, and
+                       "light" every Light Blue block. */
+                    var found = term.charAt(0) === '='
+                        ? labels[i] === term.slice(1)
+                        : labels[i].indexOf(term) !== -1;
+                    if (found) { inIt = true; break; }
                 }
                 hits.push(inIt);
             }
