@@ -69,14 +69,97 @@ document.addEventListener('DOMContentLoaded', function () {
             var q = input.value.trim().toLowerCase();
             var shown = 0;
             for (var i = 0; i < items.length; i++) {
-                var hit = !q || labels[i].indexOf(q) !== -1;
+                var hit = (!q || labels[i].indexOf(q) !== -1) && inFamily(i);
                 items[i].hidden = !hit;
                 if (hit) shown++;
             }
-            count.textContent = q
+            count.textContent = (q || active)
                 ? shown + ' of ' + items.length
                 : items.length + ' shown';
-            count.classList.toggle('is-empty', q && shown === 0);
+            count.classList.toggle('is-empty', (q || active) && shown === 0);
+        }
+
+
+        /* Family chips. Each is a set of substrings matched against the entry
+           name. They narrow alongside the text box rather than replacing it,
+           so "copper" plus the Stairs chip gives copper stairs only. */
+        var FAMILIES = [
+            ['Wood',     ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'mangrove',
+                          'cherry', 'poplar', 'bamboo', 'crimson', 'warped',
+                          'plank', 'log', 'wood']],
+            ['Stone',    ['stone', 'cobble', 'granite', 'diorite', 'andesite',
+                          'deepslate', 'tuff', 'basalt', 'blackstone', 'calcite']],
+            ['Ore',      ['ore', 'ancient debris', 'raw ']],
+            ['Copper',   ['copper']],
+            ['Concrete', ['concrete']],
+            ['Wool',     ['wool', 'carpet']],
+            ['Glass',    ['glass']],
+            ['Redstone', ['redstone', 'piston', 'observer', 'repeater',
+                          'comparator', 'hopper', 'dropper', 'dispenser',
+                          'rail', 'lever', 'target', 'crafter']],
+            ['Plants',   ['sapling', 'flower', 'tulip', 'rose', 'grass', 'fern',
+                          'leaves', 'vine', 'moss', 'mushroom', 'wart', 'kelp',
+                          'seagrass', 'bamboo', 'cactus', 'azalea', 'dripleaf',
+                          'petal', 'orchid', 'allium', 'daisy', 'lilac',
+                          'cornflower', 'poppy', 'dandelion', 'eyeblossom',
+                          'wildflowers', 'pitcher', 'torchflower', 'sunflower',
+                          'peony', 'lily', 'sprouts', 'roots', 'fungus']],
+            ['Stairs',   ['stairs']],
+            ['Slabs',    ['slab']]
+        ];
+
+        var chipRow = document.createElement('div');
+        chipRow.className = 'list-chips';
+        chipRow.setAttribute('role', 'group');
+        chipRow.setAttribute('aria-label', 'Filter by family');
+
+        var active = null;
+
+        FAMILIES.forEach(function (fam) {
+            var name = fam[0], terms = fam[1];
+            var n = 0;
+            for (var i = 0; i < labels.length; i++) {
+                for (var t = 0; t < terms.length; t++) {
+                    if (labels[i].indexOf(terms[t]) !== -1) { n++; break; }
+                }
+            }
+            if (!n) return;
+
+            var chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'list-chip';
+            chip.textContent = name + ' (' + n + ')';
+            chip.setAttribute('aria-pressed', 'false');
+            chip.addEventListener('click', function () {
+                var turningOff = active === chip;
+                if (active) {
+                    active.classList.remove('is-on');
+                    active.setAttribute('aria-pressed', 'false');
+                }
+                if (turningOff) {
+                    active = null;
+                } else {
+                    active = chip;
+                    chip.classList.add('is-on');
+                    chip.setAttribute('aria-pressed', 'true');
+                }
+                apply();
+            });
+            chip._terms = terms;
+            chipRow.appendChild(chip);
+        });
+
+        if (chipRow.children.length) {
+            wrap.parentNode.insertBefore(chipRow, wrap.nextSibling);
+        }
+
+        function inFamily(i) {
+            if (!active) return true;
+            var terms = active._terms;
+            for (var t = 0; t < terms.length; t++) {
+                if (labels[i].indexOf(terms[t]) !== -1) return true;
+            }
+            return false;
         }
 
         input.addEventListener('input', apply);

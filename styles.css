@@ -731,3 +731,50 @@ footer p {
     .nav-links li a { font-size: 0.5rem; padding: 10px 8px; }
     .section h2 { font-size: 1.3rem; }
 }
+
+/* Family chips. Selection is shown by an inverted bevel and a leading mark as
+   well as colour, so it does not rely on colour alone. */
+.list-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 14px;
+}
+
+.list-chip {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-left-color: rgba(255, 255, 255, 0.3);
+    border-right-color: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0;
+    padding: 8px 12px;
+    min-height: 36px;
+    cursor: pointer;
+}
+
+.list-chip:hover { background: rgba(255, 255, 255, 0.12); }
+
+.list-chip:focus-visible {
+    outline: 2px solid #4ade80;
+    outline-offset: 2px;
+}
+
+.list-chip.is-on {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.16);
+    border-top-color: rgba(0, 0, 0, 0.6);
+    border-left-color: rgba(0, 0, 0, 0.6);
+    border-right-color: rgba(255, 255, 255, 0.3);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.list-chip.is-on::before { content: "\2713 "; }
+
+@media (max-width: 768px) {
+    .list-chip { min-height: 44px; font-size: 0.85rem; }
+}
